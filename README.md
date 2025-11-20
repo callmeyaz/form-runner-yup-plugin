@@ -101,7 +101,7 @@ runner.validateAsync(user)
 
 # Documentation
 
-Form Runner Yup Plugin is light weight plugin that provides only 
+Form Runner Yup Plugin is light weight plugin that required the use of following two components:
 
 ## IYupValidationMessage
 IYupValidationMessage is an interface that extends IValidationMessage and strong typing to the Yup Validation Messages.
