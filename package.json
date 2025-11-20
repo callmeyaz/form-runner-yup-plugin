@@ -1,0 +1,33 @@
+{
+  "name": "form-runner-yup-plugin",
+  "description": "",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "./dist/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callmeyaz/form-runner-yup-plugin.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx ./tests/main.test.ts",
+    "dev": "npm run pkg && npm install && npm run test && npm run build",
+    "watch": "tsc -w",
+    "pkg": "npm update --save"
+  },
+  "types": "./dist/types/main.d.ts",
+  "type": "module",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "form-runner": "^0.0.22",
+    "yup": "^1.7.1"
+  },
+  "dependencies": {
+    "form-runner": "^0.0.22",
+    "yup": "^1.7.1"
+  }
+}
