@@ -60,6 +60,9 @@ Below is an example Yup validation Schema for the above sample JSON:
 
 Finally, below is how we would use the above setup with Form Runner:
 
+
+```javascript
+
 // Create instance of FormRunner
 var validator = new YupValidator(userSchema);
 var runner = new FormRunner<typeof user>(validator, user);
