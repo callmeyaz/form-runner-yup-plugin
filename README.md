@@ -64,7 +64,7 @@ runner.validateAsync(user)
   var isValid = response;
 
   // Validation passed or failed?
-    console.log("Form Validation: ", isValid ? "passed": "failed");
+    console.log("Form Validation: ", response ? "passed": "failed");
 
   // Log state of the form
   console.log("Dirty: ", JSON.stringify(runner.dirty))
@@ -104,5 +104,5 @@ YupValidator is extension of IFormValidator<IValidationMessage> and integrates Y
 
 | Members  | Type |  Description |
 | ------------ | ----- | ------------ |
-|  validate(data: T): Promise<IYupValidationMessage[]> | function | Requires JSON object to validate passed as a paramenter. Returns Promise of type array of IYupValidationMessage objects |
+|  validate(data: T): Promise<IYupValidationMessage[]> | function | Requires the JSON object as a paramenter that needs to be validated and returns a Promise of type, array of IYupValidationMessage objects |
 
