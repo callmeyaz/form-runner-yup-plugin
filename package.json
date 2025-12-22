@@ -1,7 +1,7 @@
 {
   "name": "form-runner-yup-plugin",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "./dist/main.js",
   "repository": {
