@@ -23,7 +23,7 @@ var user = {
   name: {
     firstname: "John",
     lastname: "Doe"
-  }
+  },
   address: "123 Main Street"
 }
 
