@@ -23,7 +23,7 @@ var user = {
   name: {
     firstname: "John",
     lastname: "Doe"
-  }
+  },
   address: "123 Main Street"
 }
 
@@ -33,28 +33,13 @@ Below is an example Yup validation Schema for the above sample JSON:
 
 ```javascript
 
-  const userSchema: Yup.ObjectSchema<typeof user> = Yup.object({
+const userSchema: Yup.Schema = Yup.object({
     name: Yup.object({
-      firstname: Yup.string().defined().test(function(val) { return !val ?
-        this.createError({ 
-          message: { key: this.path, message: "First name not provided" } as 
-            Yup.Message<IYupValidationMessage> })
-        : true 
-      }),
-      lastname: Yup.string().defined().test(function(val) { return !val ?
-        this.createError({ 
-          message: { key: this.path, message: "Last name not provided" } as 
-            Yup.Message<IYupValidationMessage> })
-        : true 
-      })
+        firstname: Yup.string().required("First name not provided"),
+        lastname: Yup.string().required("Last name is not provided")
     }),
-    address: Yup.string().defined().test(function(val) { return !val ?
-      this.createError({ 
-        message: { key: this.path, message: "Address not provided" } as 
-            Yup.Message<IYupValidationMessage> })
-      : true 
-    })
-  });
+    address: Yup.string().required("Address not provided")
+});
 
 ```
 
@@ -76,6 +61,8 @@ runner.setFieldTouched(true, "name.lastname");
 // Validate form when needed (may be on click of a submit button)
 runner.validateAsync(user)
 .then((response) => {
+  var isValid = response;
+
   // Validation passed or failed?
     console.log("Form Validation: ", isValid ? "passed": "failed");
 
